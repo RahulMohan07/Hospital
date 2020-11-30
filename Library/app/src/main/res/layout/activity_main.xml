@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imglogo"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/lemon"
+        android:text="My Library"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <ImageView
+        android:id="@+id/imglogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="17dp"
+        android:src="@mipmap/r"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnAllBooks"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="Show All Books"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="239dp"
+        android:layout_below="@+id/txtName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnCurrentBook"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="304dp"
+        android:text= "Current Book"
+        android:visibility="visible"
+        android:layout_below="@+id/btnAllBooks"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"/>
+
+    <Button
+        android:id="@+id/btnAlreadyRead"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="Already Read"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="370dp"
+        android:layout_below="@+id/btnCurrentBook"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"/>
+
+    <Button
+        android:id="@+id/btnWishlist"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="wishlist"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="430dp"
+        android:layout_below="@+id/btnAlreadyRead"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"/>
+
+    <Button
+        android:id="@+id/btnFavourites"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="Favourites"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="496dp"
+        android:layout_below="@+id/btnWishlist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"/>
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="About"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="568dp"
+        android:layout_below="@+id/btnFavourites"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"/>
+
+    <TextView
+        android:id="@+id/txtLicense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed by Rahul Mohan"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="682dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        />
+
+</RelativeLayout>

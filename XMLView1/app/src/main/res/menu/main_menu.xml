@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Settings"
+        android:id="@+id/menusettings"
+        android:icon="@drawable/ic_setting"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Alarm"
+        android:id="@+id/menualarm"
+        android:icon="@drawable/ic_alarm"
+        app:showAsAction="ifRoom"/>
+
+</menu>

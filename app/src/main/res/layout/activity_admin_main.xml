@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminMainActivity">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@mipmap/logoo1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/adminlogo" />
+
+    <Button
+        android:id="@+id/adminappointments"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adminlogo"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/Blue"
+        android:fontFamily="sans-serif-medium"
+        android:text="APPOINTMENTS"
+        android:textStyle="bold|italic"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="ADD DOCTOR"
+        android:layout_below="@+id/adminappointments"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/adminadddoctor"
+        android:backgroundTint="@color/Blue"
+        android:textStyle="italic|bold"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="DOCTORS"
+        android:layout_below="@+id/adminadddoctor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/Blue"
+        android:id="@+id/admindoctor"
+        android:textStyle="bold|italic"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="REMOVE DOCTORS"
+        android:layout_below="@+id/admindoctor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/adminremovedoc"
+        android:textStyle="bold|italic"
+        android:backgroundTint="@color/Blue"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Developed by Team MediPal™"
+        android:textStyle="bold|italic"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/trademark"/>
+
+
+
+
+
+</RelativeLayout>

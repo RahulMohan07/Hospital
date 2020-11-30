@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:id="@+id/FirstName"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="65dp"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:id="@+id/LastName"
+        android:layout_below="@+id/FirstName"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LastName"
+        android:id="@+id/Age"
+        android:hint="Age"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:inputType="number"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Email Id"
+        android:inputType="textEmailAddress"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/Age"
+        android:id="@+id/EamilId"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/EamilId"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/Password"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Re-Enter Password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/Password"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/RePassword"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:layout_below="@+id/RePassword"
+        android:id="@+id/txt"
+        android:textSize="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:id="@+id/RgGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:id="@+id/Male"
+            android:checked="true"
+            android:layout_marginLeft="25dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/Female"
+            android:layout_marginLeft="25dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:id="@+id/Other"
+            android:layout_marginLeft="25dp"/>
+
+
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/RgGroup"
+        android:id="@+id/Register"/>
+
+</RelativeLayout>
+</ScrollView>
