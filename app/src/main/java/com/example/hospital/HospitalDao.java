@@ -70,5 +70,16 @@ public interface HospitalDao {
     @Query("SELECT * FROM BookingSummary WHERE user_id =:user")
     LiveData<List<BookingSummary>> getuserbookingdetails(String user);
 
+    @Update
+    void update_bookingsummary(BookingSummary bookingSummary);
+
+    @Query("SELECT * FROM BookingSummary WHERE dr_id =:id AND day =:dayname ")
+    List<BookingSummary> getupdatedetails(String id,String dayname);
+
+    @Delete
+    void delete_intermediate(Intermediate intermediate);
+
+    @Query("SELECT * FROM Intermediate WHERE email_id =:email AND day_id =:day")
+    List<Intermediate> get_intermediate(String email, int day);
 
 }

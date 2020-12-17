@@ -32,6 +32,7 @@ public class AppointmentDoctorAdapter extends RecyclerView.Adapter<AppointmentDo
         holder.textView3.setText("DAY: "+currentBooking.getDay());
         holder.textView4.setText("SLOT: "+currentBooking.getSlot());
         holder.textView5.setText("BOOKING ID: "+currentBooking.getBooking_id());
+        holder.textView.setText("BOOKING STATUS: "+currentBooking.getBookingstatus());
 
     }
 
@@ -46,7 +47,7 @@ public class AppointmentDoctorAdapter extends RecyclerView.Adapter<AppointmentDo
     }
 
     static class AppointmentDoctorHolder extends RecyclerView.ViewHolder{
-        private TextView textView2,textView3,textView4,textView5;
+        private TextView textView2,textView3,textView4,textView5,textView;
 
 
         public AppointmentDoctorHolder(@NonNull View itemView){
@@ -56,6 +57,7 @@ public class AppointmentDoctorAdapter extends RecyclerView.Adapter<AppointmentDo
             textView3 = itemView.findViewById(R.id.day);
             textView4 = itemView.findViewById(R.id.slot);
             textView5 = itemView.findViewById(R.id.bid);
+            textView = itemView.findViewById(R.id.bs);
 
         }
     }

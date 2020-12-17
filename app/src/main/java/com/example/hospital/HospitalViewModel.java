@@ -22,6 +22,7 @@ public class HospitalViewModel extends AndroidViewModel {
     private LiveData<List<BookingSummary>> booking;
     private LiveData<List<BookingSummary>> bookingdr;
     private LiveData<List<BookingSummary>> bookinguser;
+  //  private LiveData<List<BookingSummary>> updatebs;
 
     public HospitalViewModel(@NonNull Application application) {
         super(application);
@@ -110,4 +111,14 @@ public class HospitalViewModel extends AndroidViewModel {
         bookinguser = repository.getuserbookingdetails(user);
         return  bookinguser;
     }
+
+    public void update_bookingsummary(BookingSummary bookingSummary){
+        repository.update_bookingsummary(bookingSummary);
+    }
+
+    public void delete_intermediate(Intermediate intermediate){
+        repository.delete_intermediate(intermediate);
+    }
+
+
 }

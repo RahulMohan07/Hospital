@@ -23,6 +23,8 @@ public class HospitalRepository {
     private LiveData<List<BookingSummary>> booking;
     private LiveData<List<BookingSummary>> bookingdr;
     private LiveData<List<BookingSummary>> bookinguser;
+    private List<BookingSummary> updatebs;
+    private List<Intermediate> allintermediate;
 
     public HospitalRepository(Application application){
         HospitalDatabase database = HospitalDatabase.getInstance(application);
@@ -217,6 +219,55 @@ public class HospitalRepository {
     public LiveData<List<BookingSummary>> getuserbookingdetails(String user){
         bookinguser = hospitalDao.getuserbookingdetails(user);
         return  bookinguser;
+    }
+
+    public void update_bookingsummary(BookingSummary bookingSummary){
+        new UpdateBookingSummaryAsyncTask(hospitalDao).execute(bookingSummary);
+    }
+
+    private static class UpdateBookingSummaryAsyncTask extends AsyncTask<BookingSummary,Void,Void> {
+        private HospitalDao hospitalDao;
+
+        private UpdateBookingSummaryAsyncTask(HospitalDao hospitalDao){
+
+            this.hospitalDao = hospitalDao;
+        }
+
+        @Override
+        protected Void doInBackground(BookingSummary... bookingSummaries) {
+            hospitalDao.update_bookingsummary(bookingSummaries[0]);
+            return null;
+        }
+
+
+    }
+
+    public List<BookingSummary> getupdatedetails(String id,String dayname){
+        updatebs = hospitalDao.getupdatedetails(id,dayname);
+        return  updatebs;
+    }
+
+    public void delete_intermediate(Intermediate intermediate){
+        new DeleteIntermediateAsyncTask(hospitalDao).execute(intermediate);
+    }
+    private static class DeleteIntermediateAsyncTask extends AsyncTask<Intermediate, Void, Void> {
+        private HospitalDao hospitalDao;
+
+        private DeleteIntermediateAsyncTask(HospitalDao hospitalDao) {
+            this.hospitalDao = hospitalDao;
+        }
+
+
+        @Override
+        protected Void doInBackground(Intermediate... intermediates) {
+            hospitalDao.delete_intermediate(intermediates[0]);
+            return null;
+        }
+    }
+
+    public List<Intermediate> getIntermediate(String emailid, int dayid) {
+        allintermediate = hospitalDao.get_intermediate(emailid, dayid);
+        return allintermediate;
     }
 
 

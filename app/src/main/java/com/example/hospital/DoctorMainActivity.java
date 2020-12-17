@@ -13,7 +13,7 @@ public class DoctorMainActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private TextView textView;
-    private Button button;
+    private Button button,button1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class DoctorMainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.random);
         textView = findViewById(R.id.txt);
         button = findViewById(R.id.appointmentsbtn);
+        button1 = findViewById(R.id.editappointmentsbtn);
 
         final String firstname = getIntent().getStringExtra("Name");
 
@@ -36,6 +37,15 @@ public class DoctorMainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DoctorMainActivity.this,AppointmentDoctorDisplayActivity.class);
                 intent.putExtra("mail_id",email);
+                startActivity(intent);
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DoctorMainActivity.this,EditAppointmentActivity.class);
+                intent.putExtra("mail",email);
                 startActivity(intent);
             }
         });

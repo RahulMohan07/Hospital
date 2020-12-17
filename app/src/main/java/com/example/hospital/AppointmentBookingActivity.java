@@ -50,6 +50,7 @@ public class AppointmentBookingActivity extends AppCompatActivity {
         textView.setText("Booking for Dr. "+name1+" "+name2);
 
         final ArrayList<String> days = new ArrayList<>();
+        
         days.add("Monday");
         days.add("Tuesday");
         days.add("Wednesday");
@@ -61,16 +62,7 @@ public class AppointmentBookingActivity extends AppCompatActivity {
         ArrayAdapter<String> daysadapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,days);
         spinner.setAdapter(daysadapter);
 
-        final ArrayList<Integer> slots = new ArrayList<>();
-        slots.add(1);
-        slots.add(2);
-        slots.add(3);
-        slots.add(4);
-        slots.add(5);
-        slots.add(6);
-        slots.add(7);
-        slots.add(8);
-        slots.add(9);
+
 
         hospitalViewModel = new ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(HospitalViewModel.class);
         hospitalRepository = new HospitalRepository(getApplication());
@@ -87,7 +79,20 @@ public class AppointmentBookingActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(List<Integer> integers_day) {
 
+                        final ArrayList<Integer> slots = new ArrayList<>();
+                        slots.add(1);
+                        slots.add(2);
+                        slots.add(3);
+                        slots.add(4);
+                        slots.add(5);
+                        slots.add(6);
+                        slots.add(7);
+                        slots.add(8);
+                        slots.add(9);
+
                         id = integers_day.get(0);
+
+
 
                         hospitalViewModel.getSlotid(email,id).observe(AppointmentBookingActivity.this, new Observer<List<Integer>>() {
                             @Override
@@ -167,7 +172,7 @@ public class AppointmentBookingActivity extends AppCompatActivity {
                 alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "CONFIRM", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        hospitalViewModel.insert_bookingdetails(new BookingSummary(EMAILID,email,name1,name2,selected,slot_selected));
+                        hospitalViewModel.insert_bookingdetails(new BookingSummary(EMAILID,email,name1,name2,selected,slot_selected,"BOOKED"));
                         hospitalViewModel.insert_intermediate(new Intermediate(email,id,slot_id));
                         Toast.makeText(AppointmentBookingActivity.this,"Booking Successful",Toast.LENGTH_SHORT).show();
                         finish();

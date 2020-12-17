@@ -16,14 +16,20 @@ public class BookingSummary {
     private String dr_lname;
     private String day;
     private String slot;
+    private String bookingstatus;
 
-    public BookingSummary(String user_id, String dr_id, String dr_fname, String dr_lname, String day, String slot) {
+    public BookingSummary(String user_id, String dr_id, String dr_fname, String dr_lname, String day, String slot, String bookingstatus) {
         this.user_id = user_id;
         this.dr_id = dr_id;
         this.dr_fname = dr_fname;
         this.dr_lname = dr_lname;
         this.day = day;
         this.slot = slot;
+        this.bookingstatus = bookingstatus;
+    }
+
+    public void setBookingstatus(String bookingstatus) {
+        this.bookingstatus = bookingstatus;
     }
 
     public void setBooking_id(int booking_id) {
@@ -56,5 +62,9 @@ public class BookingSummary {
 
     public String getSlot() {
         return slot;
+    }
+
+    public String getBookingstatus() {
+        return bookingstatus;
     }
 }
